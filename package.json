@@ -1,0 +1,24 @@
+{
+	"name" : "hackademy2013",
+	"version" : "0.0.0",
+	"description" : "Hackademy 2013 app showcase",
+	"keywords" : [  ],
+	"dependencies" : {
+  	  "ejs" : "0.8.x",
+      "express" : "3.2.x",
+      "gravatar" : "1.0.x",
+	  "socket.io": "0.9.x"
+	},
+	"author" : {
+		"name" : "John Manero",
+		"email" : "jmanero@dyn.com"
+	},
+	"license":  "MIT",
+	"repository" : {
+		"type" : "git",
+		"url" : ""
+	},
+	"engines": {
+		"node": ">=0.8.x"
+	}
+}

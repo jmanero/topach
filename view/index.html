@@ -1,0 +1,61 @@
+<% include module/head.html %>
+<body>
+	<% include module/navbar.html %>
+
+	<div class="page-header">
+		<div class="container">
+			<h1>
+				Dyn Hackademy 2013&nbsp;<small>App Showcase</small>
+			</h1>
+		</div>
+	</div>
+	<div class="container">
+		<% Object.keys(modules).forEach(function(name) { -%>
+		<% var module = modules[name]; -%>
+		<div class="row">
+			<div class="span2">
+				<h3><%= module.name %></h3>
+				<% if(module.path) { -%>
+				<a href="<%= module.path %>">Live Demo</a>
+				<% } -%>
+			</div>
+			<div class="span6">
+				<div class="well"><%= module.description %></div>
+				<table class="table">
+				<tr><th>Team</th><td><%= module.author %></td></tr>
+				<% if(module.contributors && module.contributors instanceof Array) { -%>
+				<tr><th>Team Members</th><td>
+					<ul class="media-list">
+					<% module.contributors.forEach(function(c) { -%>
+						<li class="media">
+							<% if(c.image) { -%>
+							<a class="pull-left" href="#">
+								<img class="media-object" src="<%= c.image %>">
+							</a>
+							<% } -%>
+							<div class="media-body"><strong><%= c.name %></strong></div>
+						</li>
+					<% }) -%>
+					</ul>
+				</td></tr>
+				<% } -%>
+				<% if(module.version) { -%>
+				<tr><th>Version</th><td><%= module.version %></td></tr>
+				<% } -%>
+				<% if(module.repository) { -%>
+				<tr><th>Repository</th><td>
+				<%   if(module.repo) { -%>
+					<a href="<%= module.repo %>"><% } %><%= module.repository.url || module.repository -%>
+				<%   if(module.repo) { %></a><% } -%>
+				<%   if(module.repository.type) { %>&nbsp;(<%= module.repository.type %>)<% } %>
+				</td></tr>
+				<%   } -%>
+				<% if(module.license) { -%>
+				<tr><th>License</th><td><%= module.license %></td></tr>
+				<% } -%>
+				</table>
+			</div>
+		</div>
+		<% }) -%>
+	</div>
+<% include module/foot.html %>
