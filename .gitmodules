@@ -1,0 +1,6 @@
+[submodule "modules/drawesome"]
+	path = modules/drawesome
+	url = git://github.com/Hackademy2013/drawesome.git
+[submodule "modules/nodeflyer"]
+	path = modules/nodeflyer
+	url = git://github.com/Hackademy2013/nodeflyer.git
