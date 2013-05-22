@@ -4,3 +4,6 @@
 [submodule "modules/nodeflyer"]
 	path = modules/nodeflyer
 	url = git://github.com/Hackademy2013/nodeflyer.git
+[submodule "modules/mytyme"]
+	path = modules/mytyme
+	url = git://github.com/Hackademy2013/MyTyme.git
