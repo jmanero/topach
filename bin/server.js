@@ -4,6 +4,8 @@ var HTTP = require('http');
 var IO = require('socket.io');
 var Path = require('path');
 
+var config = require('../config');
+
 var app = Express();
 var server = HTTP.createServer(app);
 
@@ -16,11 +18,12 @@ app.set('views', Path.resolve(__dirname, "../view"));
 app.use(Express.bodyParser());
 app.use(Express.logger());
 app.use(app.router);
-app.use(Express.static(Path.join(__dirname, "../resource")));
+app.use(Express.static(Path.join(__dirname, '../resource')));
 
-var modules = require('../lib/control/modules').load(app, io, Path.resolve(__dirname, '../modules'));
+var modules = require('../lib/control/module').load(app, io,
+		Path.resolve(__dirname, '../', (config.modules || 'modules')));
 require('../lib/control/view').create(app, modules);
 
-server.listen(8980, function() {
-	console.log("Listening for clients on 8980");
+server.listen(config.port || 8980, function() {
+	console.log("Listening for HTTP requests on port " + (config.port || 8980));
 });
