@@ -29,11 +29,13 @@
 					<% module.contributors.forEach(function(c) { -%>
 						<li class="media">
 							<% if(c.image) { -%>
-							<a class="pull-left" href="#">
+							<a class="pull-left" href="<%= c.url || '#' %>">
 								<img class="media-object" src="<%= c.image %>">
 							</a>
 							<% } -%>
-							<div class="media-body"><strong><%= c.name %></strong></div>
+							<div class="media-body">
+								<strong><% if(c.url) { %><a href="<%= c.url %>"><% } %><%= c.name %><% if(c.url) { %></a><% } %></strong>
+							</div>
 						</li>
 					<% }) -%>
 					</ul>

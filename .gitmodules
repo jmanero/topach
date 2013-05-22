@@ -7,3 +7,6 @@
 [submodule "modules/mytyme"]
 	path = modules/mytyme
 	url = git://github.com/Hackademy2013/MyTyme.git
+[submodule "modules/teamtoo"]
+	path = modules/teamtoo
+	url = git://github.com/Hackademy2013/TeamToo.git
