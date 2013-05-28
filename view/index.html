@@ -1,60 +1,125 @@
 <% include module/head.html %>
-<body>
 	<% include module/navbar.html %>
 	<div class="container">
 		<div class="page-header">
 			<h1>
-				App Showcase&nbsp;<small>2013</small>
+				Boots&nbsp;<small>Web UI Base</small>
 			</h1>
 		</div>
-		<% Object.keys(modules).forEach(function(name) { -%>
-		<% var module = modules[name]; -%>
 		<div class="row">
 			<div class="span2">
-				<h3><%= module.name %></h3>
-				<% if(module.path) { -%>
-				<a href="<%= module.path %>"><h4>Live Demo</h4></a>
-				<% } -%>
+				<h3>Welcome</h3>
 			</div>
 			<div class="span6">
-				<div class="well"><%= module.description %></div>
-				<table class="table table-hover">
-				<tr><th class="span2" class="span2">Team</th><td><%= module.author %></td></tr>
-				<% if(module.contributors && module.contributors instanceof Array) { -%>
-				<tr><th class="span2">Team Members</th><td>
-					<ul class="media-list">
-					<% module.contributors.forEach(function(c) { -%>
-						<li class="media">
-							<% if(c.image) { -%>
-							<a class="pull-left" href="<%= c.url || '#' %>">
-								<img class="media-object" src="<%= c.image %>">
-							</a>
-							<% } -%>
-							<div class="media-body">
-								<strong><% if(c.url) { %><a href="<%= c.url %>"><% } %><%= c.name %><% if(c.url) { %></a><% } %></strong>
-							</div>
-						</li>
-					<% }) -%>
-					</ul>
-				</td></tr>
-				<% } -%>
-				<% if(module.version) { -%>
-				<tr><th class="span2">Version</th><td><%= module.version %></td></tr>
-				<% } -%>
-				<% if(module.repository) { -%>
-				<tr><th class="span2">Repository</th><td>
-				<%   if(module.repo) { -%>
-					<a href="<%= module.repo %>"><% } %><%= module.repository.url || module.repository -%>
-				<%   if(module.repo) { %></a><% } -%>
-				<%   if(module.repository.type) { %>&nbsp;(<%= module.repository.type %>)<% } %>
-				</td></tr>
-				<%   } -%>
-				<% if(module.license) { -%>
-				<tr><th class="span2">License</th><td><%= module.license %></td></tr>
-				<% } -%>
+				<h3>Start Here</h3>
+				<p>
+					Have a look at <a href="<%= repo %>/blob/master/view/index.html" target="_blank">view/index.html</a>
+					to get started. This is the landing page for the web UI. It shows the conventions for
+					using included UI components and templating with
+					<a href="https://github.com/visionmedia/ejs" target="_blank">EJS</a> and layouts and styles from the
+					<a href="http://twitter.github.io/bootstrap/index.html" target="_blank">Bootstrap</a> framework.
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span2">
+				<h3>Layout</h3>
+			</div>
+			<div class="span6">
+				<h3>Reusable UI Components&nbsp;</h3>
+				<p>
+					These live in <a href="<%= repo %>/tree/master/view/module" target="_blank">view/module</a>. The order and
+					placement of the following components is important due to dangling HTML tags... Check out
+					<a href="<%= repo %>/blob/master/view/index.html" target="_blank">view/index.html</a> for details.
+				</p>
+				<table class="table">
+					<tr>
+						<td class="span1"><a href="<%= repo %>/blob/master/view/module/head.html" target="_blank">head.html</a></td>
+						<td>
+							<p>
+								<strong>The <code>&lt;head&gt;</code> block.</strong> Stylesheets, <code>&lt;meta&gt;</code> tags, and
+								the title of the page go here.
+							</p>
+							<p>
+								Do not place <code>&lt;script&gt;</code> tags with <code>src</code>
+								attributes in the <code>&lt;head&gt;</code> block. Stylesheets are going to slow down your
+								page loads badly enough...
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td class="span1"><a href="<%= repo %>/blob/master/view/module/navbar.html" target="_blank">navbar.html</a></td>
+						<td>
+							<strong>The pretty black bar up there&nbsp;<i class="icon-arrow-up"></i>.</strong> Check out
+							<a href="http://twitter.github.io/bootstrap/components.html#navbar" target="_blank">the docs</a> for details
+							pertaining to Bootstrap's Navbar formatting.
+						</td>
+					</tr>
+					<tr>
+						<td class="span1"><a href="<%= repo %>/blob/master/view/module/foot.html" target="_blank">foot.html</a></td>
+						<td>
+							<p>
+								<strong>That magic grey bar that's always at the bottom of the page&nbsp;<i class="icon-arrow-down"></i>.</strong>
+								Have a look at <a href="http://twitter.com/mdo" target="_blank">@mdo</a>
+								and <a href="http://twitter.com/fat" target="_blank">@fat</a>'s
+								<a href="http://twitter.github.io/bootstrap/examples/sticky-footer-navbar.html" target="_blank">example</a> to
+								see how it's done.
+							</p>
+							<p>
+								<code>&lt;script&gt;</code> tags with <code>src</code>
+								attributes do go here! While this is a questionable practice according to the W3C standard, placing your script
+								tags at the end of the body will allow your page to render without waiting for jQuery and the Bootstrap pluggins
+								to download in serial. This also means that you can't put <code>on{SomeEvent}</code> attributes or other
+								<code>&lt;script&gt;</code> tags that depend on these scripts in your main HTML. Instead, put all of your
+								scripts after their dependencies at the end of the <code>&lt;body&gt;</code> and use JQuery to register event
+								handlers.
+							</p>
+						</td>
+					</tr>
 				</table>
 			</div>
 		</div>
-		<% }) -%>
+		<div class="row">
+			<div class="span2">
+				<h3>Flair</h3>
+			</div>
+			<div class="span6">
+				<h3>Glyphicons</h3>
+				<p>
+					In addition to the <a href="http://glyphicons.com/" target="_blank">Glyphicons</a> Halflings icon-set included in
+					<a href="http://twitter.github.io/bootstrap/base-css.html#icons" target="_blank">Bootstrap</a>, the Glyphicons Free
+					icon-set has been packaged in
+					<a href="<%= repo %>/tree/master/resource/icon/glyphicons" target="_blank">resource/icon/glyphicons</a>
+					with a <a href="<%= repo %>/boots/blob/master/resource/stylesheet/glyphicon.css">stylesheet</a>
+					that allows icons to be used with the same syntax as Halflings from bootstrap.
+				</p>
+				<h4>How to use</h4>
+				<p>
+					All icons require an <code>&lt;i&gt;</code> tag with a unique class, prefixed with <code>glyph-</code>,
+					instead of <code>icon-</code>. 
+				</p>
+				<pre class="prettyprint linenums">
+&lt;i class="glyph-search"&gt;&lt;/i&gt;
+</pre>
+				<h3>Google Prettify</h3>
+				<p>
+					The minified source for
+					<a href="https://code.google.com/p/google-code-prettify" target="_blank">google-code-prettify</a> from
+					the Bootstrap <a href="http://twitter.github.io/bootstrap/base-css.html#code" target="_blank">documentation</a>
+					site is included for your stylistic convenience.
+				</p>
+				<h4>How to use</h4>
+				<p>
+					Wrap codeblocks in <code>&lt;pre&gt;</code> tags with the <code>prettyprint</code> class, and optionally, the
+					<code>linenums</code> class to add line numbers. Be careful to remove leading whitespace inside the block. Prettify
+					will render <i>exactly</i> what it gets, indents and all!
+				</p>
+				<pre class="prettyprint linenums">
+&lt;pre class="prettyprint linenums"&gt;
+	&lt;i class="glyph-search"&gt;&lt;/i&gt;
+&lt;/pre&gt;
+</pre>
+			</div>
+		</div>
 	</div>
 <% include module/foot.html %>
