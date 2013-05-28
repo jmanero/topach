@@ -229,7 +229,7 @@ describe('includes', function(){
     str.should.not.match(/__stack/);
     (function() {
       preFn({ pets: users });
-    }).should.not.throw();
+    }).should.not['throw']();
   })
 })
 
