@@ -1,4 +1,4 @@
 module.exports = {
-	port : 80,
+	port : 8980,
 	repo : "https://github.com/jmanero/boots"
 };
