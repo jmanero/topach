@@ -10,7 +10,7 @@ npm install
 node bin/server.js
 ```
 
-Navigate to http://localhost:8980/ in your browser
+Navigate to http://localhost:8980/ with your browser
 
 ## MIT License
 Copyright (c) 2013 John Manero, Dynamic Network Services Inc.
