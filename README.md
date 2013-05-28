@@ -1,5 +1,8 @@
-Hackademy 2013 Showcase
-=======================
+Boots
+=====
+A base for Bootstrap web UIs powered by NodeJS and Express
+
+Fork me to get started...
 
 ## MIT License
 Copyright (c) 2013 John Manero, Dynamic Network Services Inc.
