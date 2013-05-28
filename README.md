@@ -1,8 +1,16 @@
 Boots
 =====
-A base for Bootstrap web UIs powered by NodeJS and Express
+A base for Bootstrap web UIs powered by NodeJS and Express. Fork me to get started...
 
-Fork me to get started...
+### Quick Start
+```bash
+git clone git://github.com/jmanero/boots.git
+cd boots
+npm install
+node bin/server.js
+```
+
+Navigate to http://localhost:8980/ in your browser
 
 ## MIT License
 Copyright (c) 2013 John Manero, Dynamic Network Services Inc.
