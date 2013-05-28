@@ -1,38 +1,40 @@
-		<div id="push"></div>
-	</div> <!-- #wrap in moduel/navbar.html -->
-	<div id="footer">
-		<div class="container">
-			<p class="muted credit">
-				&copy;&nbsp;1998-<%= (new Date).getFullYear() %> Dyn &minus;&nbsp;
-				<i class="icon-heart"></i>&nbsp;<a href="/thanks">Thanks</a> &minus;&nbsp;
-				<i class="glyph-inbox glyph-small"></i>&nbsp;<a href="/legal">Legal Notices</a> &minus;&nbsp;
-				<i class="glyph-share_alt glyph-small"></i>&nbsp;<a href="<%= repo %>">Forks</a>
-			</p>
-		</div>
+<!-- Footer: module/foot.html -->
+	<div id="push"></div>
+</div> <%// #wrap in moduel/navbar.html %>
+<div id="footer">
+	<div class="container">
+		<p class="muted credit">
+			&copy;&nbsp;1998-<%= (new Date).getFullYear() %> Dyn &minus;&nbsp;
+			<i class="icon-heart"></i>&nbsp;<a href="/thanks">Thanks</a> &minus;&nbsp;
+			<i class="glyph-inbox glyph-small"></i>&nbsp;<a href="/legal">Legal Notices</a> &minus;&nbsp;
+			<i class="glyph-share_alt glyph-small"></i>&nbsp;<a href="<%= repo %>">Forks</a>
+		</p>
 	</div>
-	<script type="text/javascript" src="/script/jquery-2.0.0.js"></script>
-	<script type="text/javascript" src="/framework/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/script/prettify.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			// make code pretty
-			window.prettyPrint && prettyPrint();
-			 
-			// Add target="_blank" attribute to all links to external things
-			var isInternal = new RegExp("^" + location.origin);
-			var externalLinks = $('a').filter(function(i, a) {
-				return !(isInternal.test(a.href));
-			});
-			
-			externalLinks.each(function(i, a) {
-				var tag = $(a);
-				tag.attr("target", "_blank");
-				
-				if(!(tag.prev('i').length) && !(tag.children('i').length)) {
-					tag.append('&nbsp;<i class="icon-share" data-from="auto-linker"></i>')
-				}
-			});
+</div>
+<script type="text/javascript" src="/script/jquery-2.0.0.js"></script>
+<script type="text/javascript" src="/framework/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/script/prettify.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		// make code pretty
+		window.prettyPrint && prettyPrint();
+		 
+		// Add target="_blank" attribute to all links to external things
+		var isInternal = new RegExp("^" + location.origin);
+		var externalLinks = $('a').filter(function(i, a) {
+			return !(isInternal.test(a.href));
 		});
-	</script>
+		
+		externalLinks.each(function(i, a) {
+			var tag = $(a);
+			tag.attr("target", "_blank");
+			
+			if(!(tag.prev('i').length) && !(tag.next('i').length) && !(tag.children('i').length)) {
+				tag.append('&nbsp;<i class="icon-share" data-from="auto-linker"></i>')
+			}
+		});
+	});
+</script>
 </body>
 </html>
+<!-- End Footer -->
