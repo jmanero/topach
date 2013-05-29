@@ -1,12 +1,11 @@
 {
-	"name" : "boots",
-	"version" : "1.0.0",
-	"description" : "A base for Bootstrap web UIs powered by NodeJS and Express",
-	"keywords" : [ "web", "template", "base", "express" ],
+	"name" : "topach",
+	"version" : "0.0.1",
+	"description" : "Time conversion UI",
+	"keywords" : [ "web", "timezone", "clock" ],
 	"dependencies" : {
 		"ejs" : "0.8.x",
 		"express" : "3.2.x",
-		"socket.io": "0.9.x"
 	},
 	"author" : {
 		"name" : "John Manero",
@@ -15,7 +14,7 @@
 	"license":  "MIT",
 	"repository" : {
 		"type" : "git",
-		"url" : "git://github.com/jmanero/boots.git"
+		"url" : "git://github.com/jmanero/topach.git"
 	},
 	"engines": {
 		"node": ">=0.8.x"
